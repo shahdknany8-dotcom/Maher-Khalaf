@@ -1,0 +1,196 @@
+:root {
+  --midnight-blue: #1C2E4A;
+  --true-navy: #26374D;
+  --dusty-blue: #52677D;
+  --gray-blue: #BDC4D4;
+  --ivory: #F9F9F4;
+}
+
+/* إعداد عام */
+body {
+  font-family: "Tajawal", sans-serif;
+  margin: 0;
+  color: #fff;
+  direction: rtl;
+  line-height: 1.7;
+  background: linear-gradient(to bottom, #1C2E4A, #26374D, #52677D);
+}
+
+/* الهيرو */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* شفافية الفيديو */
+  filter: brightness(0.6) contrast(1.1) saturate(0.7); /* تحسين الدمج */
+}
+
+.hero .overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(28,46,74,0.6), rgba(82,103,125,0.6));
+  z-index: 1;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .overlay > * {
+  position: relative;
+  z-index: 2; /* لضمان ظهور النصوص والأزرار فوق الـ overlay */
+}
+
+.hero h1 { 
+  font-size: 2rem; 
+  max-width: 600px; 
+  margin: 0; 
+}
+
+.hero p { 
+  max-width: 500px; 
+}
+
+.hero button {
+  background: rgba(82,103,125,0.9);
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero button:hover { 
+  background: rgba(189,196,212,0.9); 
+}
+
+.counter { 
+  margin-top: 10px; 
+}
+
+/* الأقسام */
+section {
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.05);
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  max-width: 1000px;
+}
+
+/* عن ماهر */
+.about-maher {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: start;
+}
+.about-photo img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.about-text { padding: 20px; }
+
+/* الشركاء */
+.partners button {
+  background: rgba(38,55,77,0.9);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.partners button:hover { background: rgba(82,103,125,0.9); }
+
+/* المودال */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--ivory);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  color: var(--true-navy);
+}
+.modal-content h4 { margin-top: 0; }
+.close {
+  position: absolute;
+  top: 10px; left: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* الفورم */
+.modal-content input,
+.modal-content textarea {
+  display: block;             /* كل حقل في سطر مستقل */
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid var(--gray-blue);
+  box-sizing: border-box;
+}
+
+/* checkboxes */
+.modal-content label {
+  display: block;            /* كل checkbox في سطر منفصل */
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+/* زر إرسال الحلم */
+.modal-content button {
+  background: var(--true-navy);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: inline-block;       /* للتحكم بالمارجن */
+  margin-top: 12px;            /* مسافة فوق الزر */
+  margin-left: 0;              /* يحاذي على اليسار */
+  margin-right: auto;          /* يترك المساحة على اليمين */
+}
+.modal-content button:hover { background: var(--dusty-blue); }
+
+/* الفوتر */
+footer {
+  text-align: center;
+  background: var(--midnight-blue);
+  color: var(--gray-blue);
+  padding: 20px;
+}
+footer a { color: var(--gray-blue); text-decoration: none; }
+footer a:hover { color: var(--ivory); }
